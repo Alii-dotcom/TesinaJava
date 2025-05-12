@@ -37,8 +37,31 @@ public class Order {
         }
     }
 
+
+    // Getter and Setter
+    public Client getClient() { return client; }
+    public void setClient(Client client) { this.client = client;   }
+
+    public User getUser() { return user; }
+    public void setUser(User user) { this.user = user; }
+
+    public Product getProduct() { return product; }
+    public void setProduct(Product product) { this.product = product; }
+
+    public int getQuantityRequested() { return quantityRequested; }
+    public void setQuantityRequested(int quantityRequested) { this.quantityRequested = quantityRequested; }
+
+    public double getPriceTot() { return priceTot; }
+    public void setPriceTot(double priceTot) { this.priceTot = priceTot; }
+
+    public LocalDate getDate() { return date; }
+    public void setDate(LocalDate date) { this.date = date; }
+
     public boolean isAvailable() { return available; }
+    public void setAvailable(boolean available) { this.available = available; }
+
     public String getStatus() { return status; }
+    public void setStatus(String status) { this.status = status; }
 
     public PaymentPlan getPaymentPlan() {
         return paymentPlan;

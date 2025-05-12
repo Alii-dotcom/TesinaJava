@@ -2,6 +2,7 @@ package org.example;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
+import java.time.LocalDate;
 
 public class User {
     private String name;
@@ -19,7 +20,7 @@ public class User {
         this.lvl = lvl;
         this.nSells = nSells;
     }
-    
+
     // Getter and Setter
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
@@ -85,5 +86,8 @@ public class User {
             }
         }
         return currentUser;
+    }
+    public Sale confirmSale(Order order, LocalDate saleDate, PaymentPlan paymentPlan, Warehouse warehouse) {
+        return new Sale(order, saleDate, paymentPlan, this, warehouse);
     }
 }

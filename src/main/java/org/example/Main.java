@@ -6,6 +6,7 @@ import org.example.PaymentPlan;
 
 public class Main {
     public static void main(String[] args) {
+        // User finti
         ArrayList<User> users = new ArrayList<>();
         users.add(new User("Alice", "Menozzi", "aliceM", "password123", 1, 52));
         users.add(new User("Manuela", "Menozzi", "manuM", "securePass", 2, 30));
@@ -13,6 +14,7 @@ public class Main {
         User utenteLoggato = User.login(users);
         if (utenteLoggato == null) return;
 
+        // Clienti finti
         ArrayList<Client> clients = new ArrayList<>();
         clients.add(new Client("Azienda1", "Via San Paolo", "Milano", "IT1234567890", PaymentPlan.FULL_PAYMENT, "RSSMRA80A01H501U", "01234567890"));
         clients.add(new Client("Azienda2", "Via P. Vivarelli", "Modena", "IT0987654321", PaymentPlan.INSTALLMENTS_30_60_90, "VRDLGI85C15Z404X", "09876543210"));
@@ -21,15 +23,18 @@ public class Main {
         System.out.println("Cliente creato:\n" + nuovoCliente);
         clients.add(nuovoCliente);
 
+        // Prodotti finti
         ArrayList<Product> products = new ArrayList<>();
         products.add(new Product("P1", "Type1", 2.5, 10));
         products.add(new Product("P2", "Type2", 6.5, 34.7));
         products.add(new Product("P3", "Type3", 4.99, 22.8));
 
+        // Li aggiungo al magazzino
         Warehouse warehouse = new Warehouse();
         warehouse.addProduct(products.get(0), 10);
         warehouse.addProduct(products.get(1), 0);  // Prodotto esaurito
         warehouse.addProduct(products.get(2), 3);
+
 
         System.out.println("- Utenti Registrati:"); //stampo gli utenti registrati
         for (User u : users) {
